@@ -15,7 +15,7 @@ def remove_duplicate_images(folder_path):
   for root, _, files in os.walk(folder_path):
     for file in files:
       file_path = os.path.join(root, file)
-      if file_path.lower().endswith(('.jpg', '.jpeg', '.png')):
+      if file_path.lower().endswith(('.jpg', '.jpeg', '.png', '.gif', 'svg')):
         with open(file_path, 'rb') as f:
           file_hash = hashlib.md5(f.read()).hexdigest()
 
